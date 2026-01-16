@@ -2512,5 +2512,5 @@ def internal_error(e):
 # STARTUP
 # ============================================
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=5000, threaded=False)
+    port = int(os.environ.get('PORT', 8000))
+    app.run(debug=True, host='0.0.0.0', port=8000, threaded=False)
