@@ -863,7 +863,6 @@ def remove_project_member(current_user, project_id, user_id):
         if target_role['role'] == 'owner':
             return jsonify({'message': 'Cannot remove project owner'}), 403
         
-        # Cannot remove yourself if you're the owner
         if user_id == current_user['id']:
             user_role = execute_query("""
                 SELECT role FROM project_members 
