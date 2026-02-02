@@ -52,10 +52,14 @@ except Exception as e:
     exit(1)
 
 # CORS
-ALLOWED_ORIGINS = os.environ.get('ALLOWED_ORIGINS', 'http://localhost:5173').split(',')
+ALLOWED_ORIGINS = [
+    'https://nimble-fairy-72aeaa.netlify.app',
+    'http://localhost:5173', 
+    'http://localhost:3000', 
+]
 
 CORS(app, 
-     resources={r"/api/*": {"origins": "*"}},
+     resources={r"/api/*": {"origins": "*"}}, 
      allow_headers=["Content-Type", "Authorization"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
      supports_credentials=True,
